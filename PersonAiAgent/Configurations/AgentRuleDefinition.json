@@ -1,0 +1,17 @@
+{
+  "agent_rules": {
+    "require_validation_before_crud": true,
+    "allowed_operations_after_validation_only": [
+      "create",
+      "update",
+      "delete"
+    ],
+    "validation_agent_required": true,
+    "expected_validation_flags": [
+      "IsValidData"
+    ],
+    "block_operation_if": {
+      "IsValidData": false
+    }
+  }
+}

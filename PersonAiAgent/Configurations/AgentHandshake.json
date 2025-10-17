@@ -1,0 +1,14 @@
+{
+  "required_format": {
+    "action": "create|read|update|delete",
+    "entity": "person",
+    "identifier": "optional",
+    "data": "object",
+    "validation_hints": {
+      "IsValidData": "boolean",
+      "IsValidDataMandatory": "boolean",
+      "CanValidateBeforeSave": "boolean"
+    },
+    "required_fields": [ "first_name", "last_name", "date_of_birth" ]
+  }
+}

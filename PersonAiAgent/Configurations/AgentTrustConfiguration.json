@@ -1,0 +1,10 @@
+{
+  "agent_trust_policy": {
+    "trusted_callers": [
+      "ValidationAgent",
+      "WorkflowAgent",
+      "HRRecruitmentAgent"
+    ],
+    "reject_unknown_callers": true,
+    "reason_on_reject": "Untrusted source. Only validated agents are allowed."
+  }
