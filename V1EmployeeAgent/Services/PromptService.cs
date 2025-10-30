@@ -11,8 +11,18 @@ namespace EmployeeDataAgent.Services
         {
             _repository = repository;
         }
-        public async Task<PromptResponseMessage> Prompt(PromptRequestMessage request)
+        public async Task<PromptResponseMessage> ProcessPrompt(PromptRequestMessage request)
         {
+            PayanarssApplication payanarssTypeApplication = new PayanarssApplication();
+            PayanarssTypes types = payanarssTypeApplication.Types;
+
+            foreach (var type in types) { 
+                foreach(var column in type.Value.Children)
+                {
+
+                }
+            }
+
             return await _repository.CreateJson(request);
         }
     }

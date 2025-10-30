@@ -9,22 +9,16 @@ namespace EmployeeDataAgent.Repositories
         // Save JSON string to file with table name
         public async Task<PromptResponseMessage> CreateJson(PromptRequestMessage request)
         {
-            if (string.IsNullOrWhiteSpace(request.DtoName))
-                throw new ArgumentException("Table name is required");
-
-            string fileName = $"{request.DtoName}.json";
+            string fileName = $"Abc.json";
 
             // Beautify JSON (optional)
-            using var doc = JsonDocument.Parse(request.Dto);
+            using var doc = JsonDocument.Parse("");
             var options = new JsonSerializerOptions { WriteIndented = true };
             string formatted = JsonSerializer.Serialize(doc.RootElement, options);
 
             File.WriteAllText(fileName, formatted);
 
             PromptResponseMessage response = new PromptResponseMessage();
-            response.DtoName  = request.DtoName;
-            response.Dto = request.Dto;
-            response.RequestAction = request.Action;
 
             return response;
         }

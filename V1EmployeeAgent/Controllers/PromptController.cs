@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace EmployeeDataAgent.Controllers
 {
-    [Route("api/vi/EmployeeDataAgent/[controller]")]
+    [Route("api/v1/EmployeeDataAgent/[controller]")]
     [ApiController]
     public class PromptController : ControllerBase
     {
@@ -17,7 +17,7 @@ namespace EmployeeDataAgent.Controllers
         [HttpPost]
         public async Task<ActionResult<PromptResponseMessage>> Prompt(PromptRequestMessage request)
         {
-            var created = await _service.Prompt(request);
+            var created = await _service.ProcessPrompt(request);
             return CreatedAtAction(nameof(created), new { id = created.Id }, created);
         }
     }

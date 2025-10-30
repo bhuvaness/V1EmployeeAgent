@@ -1,18 +1,12 @@
 ﻿namespace EmployeeDataAgent.DataModels
 {
-    public enum RequestAction
-    {
-        Create,
-        Read,
-        Update,
-        Delete
-    }
     public class PromptRequestMessage
     {
         public PromptRequestMessage() { }
+        public string Role { get; set; }
+        public string AgentId { get; set; }
         public string RequestId { get; set; }
-        public string DtoName { get; set; }
-        public string Dto { get; set; }
-        public RequestAction Action { get; set; }
+        public PayanarssApplication Application { get; set; }
+        public string PromptMessage {  get; set; }
     }
 }
